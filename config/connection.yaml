@@ -8,4 +8,4 @@ filter_location:
 
 filter_company:
   filter_bool: True
-  filter_company: Berkshire Hathaway Specialty Insurance
+  filter_company: UnitedHealth Group

@@ -1,11 +1,14 @@
 import psutil
 import os
 import yaml
+from pathlib import Path
 
 from openai import OpenAI
-from config.base_config import BASE_PATH
 
-llm_config_path = os.path.join(BASE_PATH, "config/llm.yaml")
+# Determine BASE_PATH dynamically
+BASE_PATH = Path(__file__).parent.parent
+
+llm_config_path = BASE_PATH / "config" / "llm.yaml"
 with open(llm_config_path, "r") as f:
     llm_config = yaml.safe_load(f)
 
