@@ -1,0 +1,1 @@
+BASE_PATH = "C:/Users/shaur/Desktop/Learnings/linkedin_automation"
