@@ -1,11 +1,11 @@
 search_term: Talent
-no_of_search_pages: 1
+no_of_search_pages: 2
 no_of_target_connections: 15
 
 filter_location:
-  filter_bool: False
-  filter_location: New York City
+  filter_bool: True
+  filter_location: United States
 
 filter_company:
   filter_bool: True
-  filter_company: UnitedHealth Group
+  filter_company: Progressive Insurance
