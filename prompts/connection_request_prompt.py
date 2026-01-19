@@ -5,7 +5,7 @@
 def get_note_text_prompt(profile_name):
 
     system_prompt = f"""
-    Craft a warm, personalized LinkedIn connection request from a young, enthusiastic data scientist. Use the provided profile information to create a genuine, friendly message that:
+    Craft a warm, personalized LinkedIn connection request from a experienced, enthusiastic data scientist. Use the provided profile information to create a genuine, friendly message that:
 
     1. Addresses the person by first name
     2. References a specific aspect of their work, role, or company that's truly impressive
@@ -17,9 +17,8 @@ def get_note_text_prompt(profile_name):
     Profile info: {profile_name}
 
     Example structure (adapt creatively):
-    Hi [Name]! 
-    Your work on [specific project/achievement] at [Company] caught my eye. As a young data scientist, I'm fascinated by [related aspect]. 
-    I'd love to connect and perhaps learn more from you. Your guidance is invaluable to me
+    Hi [Name],
+Loved your work on [specific project/achievement] at [Company]. I’m a data scientist interested in [related aspect] and would be glad to connect and learn from your experience.
     """
 
 

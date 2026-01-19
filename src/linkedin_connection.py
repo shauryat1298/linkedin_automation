@@ -118,17 +118,34 @@ def apply_search_filters(driver, config):
     
     click_button(driver, "Show results", 
                 "button.search-reusables__secondary-filters-show-results-button")
+    
+    # Wait for search results to load
+    sleep(random.uniform(3, 5))
 
 
 def collect_profile_urls(driver, config):
     """Collect profile URLs from search results pages."""
     profile_urls = []
     
-    for _ in range(config["no_of_search_pages"]):
+    for page_num in range(config["no_of_search_pages"]):
+        print(f"Collecting profiles from page {page_num + 1}...")
+        
+        # Wait for search results to be present
+        try:
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((
+                    By.CSS_SELECTOR, 
+                    "div[data-view-name='search-entity-result-universal-template']"
+                ))
+            )
+        except TimeoutException:
+            print("Warning: No profile elements found on this page (timeout)")
+        
         profile_elements = driver.find_elements(
             By.CSS_SELECTOR, 
             "div[data-view-name='search-entity-result-universal-template']"
         )
+        print(f"Found {len(profile_elements)} profile elements on page {page_num + 1}")
         
         for profile_element in profile_elements:
             profile_link = profile_element.find_element(By.TAG_NAME, "a").get_attribute("href")
